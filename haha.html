@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Page Title</title>
+</head>
+<body>
+  <script>
+ 	// Your JavaScript goes here!
+   
+    var playerscore =0
+    var computerscore=0
+          var choices = ['rock', 'paper', 'scissors'];
+      function computerPlay(){
+        return(choices[Math.floor(Math.random()*choices.length)]);
+            }
+      function gameround(playerSelection, computerSelection){
+        playerSelection = playerSelection.toLowerCase();
+
+        if (playerSelection === computerSelection) {
+          return("You both chose the same.");}
+          else if(playerSelection==="rock" && computerSelection==="scissors"){
+            playerscore++
+            return("You win");
+          }
+          else if(playerSelection==="paper" && computerSelection==="rock"){
+            playerscore++
+          return("You win");      
+        }
+        else if(playerSelection==="scissors" && computerSelection==="paper"){
+          playerscore++
+          return("You win");
+        }
+        else 
+        computerscore++
+        return("You lose"); 
+      }
+
+    
+    
+    function game(){
+      var counter = 0
+      while (counter<5){
+        var playerSelection =prompt();  
+    var computerSelection = computerPlay();
+    console.log(gameround(playerSelection,computerSelection));
+
+        counter++
+      }
+      console.log(playerscore);
+      console.log(computerscore);
+      if(playerscore>computerscore){
+        console.log("you won");
+      }
+      else if(playerscore<computerscore){
+        console.log("computer won");
+
+      }
+      else console.log("it's a draw");
+    }
+    
+    game()
+ 
+</script>
+</body>
+</html>
