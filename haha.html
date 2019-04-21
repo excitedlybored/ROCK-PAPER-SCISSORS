@@ -9,55 +9,60 @@
    
     var playerscore =0
     var computerscore=0
-          var choices = ['rock', 'paper', 'scissors'];
-      function computerPlay(){
+    var choices = ['rock', 'paper', 'scissors'];
+      
+    function computerPlay(){
         return(choices[Math.floor(Math.random()*choices.length)]);
             }
-      function gameround(playerSelection, computerSelection){
+      
+    function gameround(playerSelection, computerSelection){
         playerSelection = playerSelection.toLowerCase();
 
         if (playerSelection === computerSelection) {
-          return("You both chose the same.");}
-          else if(playerSelection==="rock" && computerSelection==="scissors"){
-            playerscore++
-            return("You win");
+          return("You both chose the same.")
           }
-          else if(playerSelection==="paper" && computerSelection==="rock"){
-            playerscore++
+          
+        else if(playerSelection==="rock" && computerSelection==="scissors"){
+          playerscore++
+          return("You win");
+          }
+          
+        else if(playerSelection==="paper" && computerSelection==="rock"){
+          playerscore++
           return("You win");      
         }
         else if(playerSelection==="scissors" && computerSelection==="paper"){
           playerscore++
           return("You win");
         }
-        else 
+        else{ 
         computerscore++
         return("You lose"); 
       }
+    }
 
     
-    
+  
     function game(){
       var counter = 0
       while (counter<5){
         var playerSelection =prompt();  
-    var computerSelection = computerPlay();
-    console.log(gameround(playerSelection,computerSelection));
+        var computerSelection = computerPlay();
+        console.log(gameround(playerSelection,computerSelection));
 
         counter++
       }
-      console.log(playerscore);
-      console.log(computerscore);
+      console.log("user score: "+playerscore);
+      console.log("computer score: "+computerscore);
       if(playerscore>computerscore){
         console.log("you won");
       }
       else if(playerscore<computerscore){
         console.log("computer won");
-
       }
-      else console.log("it's a draw");
+      else {console.log("it's a draw");
     }
-    
+    }
     game()
  
 </script>
